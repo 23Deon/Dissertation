@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import List, Tuple
 
 from gridbot.sim.actions import Action, Heading
-from gridbot.sim.simulator import Event
+from gridbot.sim.types import Event
 
 Position = Tuple[int, int]
 

@@ -1,38 +1,93 @@
+from __future__ import annotations
+from gridbot.sim.trace import Trace, TraceStep
+
 from dataclasses import dataclass
+from enum import Enum
 from typing import Tuple
+
+from gridbot.sim.actions import Action, Heading, forward_delta, turn_left, turn_right
 from gridbot.world.grid import Grid
 
 Position = Tuple[int, int]
 
 
+class Event(str, Enum):
+    OK = "OK"
+    COLLISION = "COLLISION"
+    GOAL_REACHED = "GOAL_REACHED"
+    TIMEOUT = "TIMEOUT"
+
+
 @dataclass
 class RobotState:
     position: Position
+    heading: Heading
+    t: int = 0
     done: bool = False
-    collided: bool = False
-    steps: int = 0
+    last_event: Event = Event.OK
+
 
 class Simulator:
-    def __init__(self, grid: Grid):
+    def __init__(self, grid: Grid, max_steps: int = 200, start_heading: Heading = Heading.E):
         self.grid = grid
-        self.state = RobotState(position=grid.start)
+        self.max_steps = max_steps
+        self.state = RobotState(position=grid.start, heading=start_heading)
 
-    def step(self, move: Tuple[int, int]) -> None:
-        if self.state.done:
-            return
+    def step(self, action: Action) -> Event:
+        s = self.state
+        if s.done:
+            return s.last_event
 
-        x, y = self.state.position
-        dx, dy = move
-        new_pos = (x + dx, y + dy)
+        # Step limit check (deterministic termination)
+        if s.t >= self.max_steps:
+            s.done = True
+            s.last_event = Event.TIMEOUT
+            return s.last_event
 
-        self.state.steps += 1
+        s.t += 1  # advance time deterministically
 
-        if not self.grid.in_bounds(new_pos) or self.grid.is_obstacle(new_pos):
-            self.state.collided = True
-            self.state.done = True
-            return
+        if action == Action.WAIT:
+            s.last_event = Event.OK
+            return s.last_event
 
-        self.state.position = new_pos
+        if action == Action.TURN_LEFT:
+            s.heading = turn_left(s.heading)
+            s.last_event = Event.OK
+            return s.last_event
+
+        if action == Action.TURN_RIGHT:
+            s.heading = turn_right(s.heading)
+            s.last_event = Event.OK
+            return s.last_event
+
+        # FORWARD
+        dx, dy = forward_delta(s.heading)
+        new_pos = (s.position[0] + dx, s.position[1] + dy)
+
+        if (not self.grid.in_bounds(new_pos)) or self.grid.is_obstacle(new_pos):
+            s.done = True
+            s.last_event = Event.COLLISION
+            return s.last_event
+
+        s.position = new_pos
 
         if self.grid.is_goal(new_pos):
-            self.state.done = True
+            s.done = True
+            s.last_event = Event.GOAL_REACHED
+            return s.last_event
+
+        s.last_event = Event.OK
+        return s.last_event
+    def _log(self, action: Action, event: Event) -> None:
+        s = self.state
+        self.trace.append(
+            TraceStep(
+                t=s.t,
+                position=s.position,
+                heading=s.heading,
+                action=action,
+                event=event,
+            )
+        )
+    
+
