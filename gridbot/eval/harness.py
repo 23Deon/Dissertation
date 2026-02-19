@@ -7,6 +7,8 @@ from gridbot.sim.actions import Action
 from gridbot.sim.simulator import Simulator
 from gridbot.sim.types import Event
 from gridbot.world.observe import Observation
+from gridbot.eval.scenario import Scenario
+from gridbot.world.grid import Grid
 
 
 @dataclass(frozen=True)
@@ -36,3 +38,17 @@ def run_episode(sim: Simulator, controller: Controller) -> EpisodeResult:
         steps=sim.state.t,
         trace_len=len(sim.trace.steps),
     )
+
+
+def run_scenario(scenario: Scenario, controller: Controller):
+    grid = Grid(
+        width=scenario.width,
+        height=scenario.height,
+        obstacles=scenario.obstacles,
+        start=scenario.start,
+        goal=scenario.goal,
+    )
+
+    sim = Simulator(grid, max_steps=scenario.max_steps)
+
+    return run_episode(sim, controller)
