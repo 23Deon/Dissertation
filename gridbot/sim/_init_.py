@@ -1,0 +1,1 @@
+self.trace = Trace(steps=[])
