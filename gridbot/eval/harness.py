@@ -9,6 +9,7 @@ from gridbot.sim.types import Event
 from gridbot.world.observe import Observation
 from gridbot.eval.scenario import Scenario
 from gridbot.world.grid import Grid
+from gridbot.eval.record import ScenarioRunRecord, TraceRecord
 
 
 @dataclass(frozen=True)
@@ -52,3 +53,17 @@ def run_scenario(scenario: Scenario, controller: Controller):
     sim = Simulator(grid, max_steps=scenario.max_steps)
 
     return run_episode(sim, controller)
+
+
+def run_episode_record(sim: Simulator, controller: Controller) -> ScenarioRunRecord:
+    result = run_episode(sim, controller)
+
+    positions = [s.position for s in sim.trace.steps]
+    actions = [s.action for s in sim.trace.steps]
+    headings = [s.heading for s in sim.trace.steps]
+
+    return ScenarioRunRecord(
+        event=result.event,
+        steps=result.steps,
+        trace=TraceRecord(positions=positions, actions=actions, headings=headings),
+    )
