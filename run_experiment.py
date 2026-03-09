@@ -13,7 +13,7 @@ def main():
         Scenario(5, 5, {(2, 2)}, (0, 0), (4, 0)),
     ]
 
-    controller = load_controller("controllers/pdd/controller_v1.py")
+    controller = load_controller("controllers/pdd/controller_v2.py")
 
     result = run_suite(scenarios, controller)
 
