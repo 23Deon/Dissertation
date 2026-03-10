@@ -9,11 +9,13 @@ def main():
     print("Setting up scenarios and controller...")
 
     scenarios = [
-        Scenario(3, 3, set(), (0, 0), (2, 0)),
-        Scenario(5, 5, {(2, 2)}, (0, 0), (4, 0)),
-    ]
+    Scenario(3, 3, set(), (0, 0), (2, 0)),        # easy straight line
+    Scenario(3, 3, set(), (0, 0), (0, 2)),        # requires turning
+    Scenario(3, 3, {(1, 0)}, (0, 0), (2, 0)),     # blocked directly ahead
+]
 
-    controller = load_controller("controllers/pdd/controller_v2.py")
+
+    controller = load_controller("controllers/pdd/controller_v1.py")
 
     result = run_suite(scenarios, controller)
 
