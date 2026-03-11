@@ -1,5 +1,7 @@
 print("Running experiment...")
 
+import csv
+
 from gridbot.eval.scenario import Scenario
 from gridbot.eval.suite import run_suite
 from gridbot.eval.load_controller import load_controller
@@ -20,25 +22,39 @@ def main():
         "SDD v1": "controllers/sdd/controller_v1.py",
     }
 
-    for name, path in controllers.items():
-        print(f"\n--- Running {name} ---")
+    with open("results.csv", "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["controller", "scenario", "event", "steps", "trace_len"])
 
-        controller = load_controller(path)
-        result = run_suite(scenarios, controller)
+        for name, path in controllers.items():
+            print(f"\n--- Running {name} ---")
 
-        print("Successes:", result.success_count)
-        print("Collisions:", result.collision_count)
-        print("Total steps:", result.total_steps)
-        print("Average steps:", result.average_steps)
+            controller = load_controller(path)
+            result = run_suite(scenarios, controller)
 
-        print("Per-scenario results:")
-        for i, scenario_result in enumerate(result.results, start=1):
-            print(
-                f"  Scenario {i}: "
-                f"event={scenario_result.event}, "
-                f"steps={scenario_result.steps}, "
-                f"trace_len={scenario_result.trace_len}"
-            )
+            print("Successes:", result.success_count)
+            print("Collisions:", result.collision_count)
+            print("Total steps:", result.total_steps)
+            print("Average steps:", result.average_steps)
+
+            print("Per-scenario results:")
+            for i, scenario_result in enumerate(result.results, start=1):
+                print(
+                    f"  Scenario {i}: "
+                    f"event={scenario_result.event}, "
+                    f"steps={scenario_result.steps}, "
+                    f"trace_len={scenario_result.trace_len}"
+                )
+
+                writer.writerow([
+                    name,
+                    i,
+                    scenario_result.event,
+                    scenario_result.steps,
+                    scenario_result.trace_len,
+                ])
+
+    print("\nResults saved to results.csv")
 
 
 if __name__ == "__main__":
