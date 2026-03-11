@@ -31,6 +31,15 @@ def main():
         print("Total steps:", result.total_steps)
         print("Average steps:", result.average_steps)
 
+        print("Per-scenario results:")
+        for i, scenario_result in enumerate(result.results, start=1):
+            print(
+                f"  Scenario {i}: "
+                f"event={scenario_result.event}, "
+                f"steps={scenario_result.steps}, "
+                f"trace_len={scenario_result.trace_len}"
+            )
+
 
 if __name__ == "__main__":
     main()

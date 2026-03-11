@@ -28,6 +28,16 @@ class SuiteResult:
     def collision_count(self) -> int:
         return sum(1 for r in self.results if r.event == Event.COLLISION)
 
+    @property
+    def total_steps(self) -> int:
+        return sum(r.steps for r in self.results)
+
+    @property
+    def average_steps(self) -> float:
+        if not self.results:
+            return 0.0
+        return self.total_steps / len(self.results)
+
 
 def run_suite(scenarios: List[Scenario], controller: Controller) -> SuiteResult:
     results = []
