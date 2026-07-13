@@ -1,0 +1,106 @@
+approach,from_version,to_version,scenario_id,scenario_name,difficulty,challenge_type,description,step_budget,event_prev,event_curr,steps_prev,steps_curr,step_delta,trace_changed,event_changed,steps_changed,pure_trace_drift,outcome_drift,change_type
+opus_pdd_group_b3,1,2,1,easy_open_short_path,easy,straight_line,"Open grid, no obstacles, short path.",20,INVALID_CONTROLLER,GOAL_REACHED,0,4,4,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,2,easy_single_obstacle_detour,easy,single_detour,Single obstacle on the direct path requiring one simple detour.,24,INVALID_CONTROLLER,GOAL_REACHED,0,13,13,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,3,easy_l_wall_one_turn,easy,single_detour,L-shaped wall forcing a simple route with one major turn.,28,INVALID_CONTROLLER,TIMEOUT,0,28,28,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,4,easy_corner_goal_blocked,easy,single_detour,Goal is in a corner with one obstacle blocking the most direct route.,26,INVALID_CONTROLLER,TIMEOUT,0,26,26,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,5,easy_two_isolated_obstacles,easy,single_detour,Slightly longer path with two isolated obstacles on the direct route.,30,INVALID_CONTROLLER,TIMEOUT,0,30,30,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,6,medium_straight_narrow_corridor,medium,corridor,Narrow one-cell-wide corridor running straight through the map.,15,INVALID_CONTROLLER,TIMEOUT,0,15,15,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,7,medium_s_shaped_path,medium,corridor,S-shaped corridor with two forced turns.,20,INVALID_CONTROLLER,TIMEOUT,0,20,20,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,8,medium_central_obstacle,medium,single_detour,Large central obstacle can be navigated around either side.,20,INVALID_CONTROLLER,TIMEOUT,0,20,20,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,9,medium_single_valid_detour,medium,single_detour,Direct route is blocked and only one detour gap is available.,18,INVALID_CONTROLLER,TIMEOUT,0,18,18,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,10,medium_dead_end_corridors,medium,dead_end,Two corridor choices exist; one is a dead end and one reaches the goal.,20,INVALID_CONTROLLER,TIMEOUT,0,20,20,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,11,hard_maze_one_dead_end,hard,dead_end,Maze-like layout with one dead end before the correct path.,24,INVALID_CONTROLLER,TIMEOUT,0,24,24,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,12,hard_u_trap_goal,hard,counterintuitive,U-shaped trap in front of the goal requiring the robot to go around.,24,INVALID_CONTROLLER,TIMEOUT,0,24,24,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,13,hard_long_detour_budget,hard,counterintuitive,Long detour required; naive direct movement exhausts the tight budget.,26,INVALID_CONTROLLER,TIMEOUT,0,26,26,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,14,hard_two_dead_ends,hard,dead_end,"Two dead ends and one correct path, with the correct route initially counterintuitive.",28,INVALID_CONTROLLER,TIMEOUT,0,28,28,False,True,True,False,True,improvement
+opus_pdd_group_b3,1,2,15,hard_move_away_corridor,hard,counterintuitive,Corridor forces the robot to move away from the nearby goal before reaching it.,22,INVALID_CONTROLLER,TIMEOUT,0,22,22,False,True,True,False,True,improvement
+opus_pdd_group_b3,2,3,1,easy_open_short_path,easy,straight_line,"Open grid, no obstacles, short path.",20,GOAL_REACHED,GOAL_REACHED,4,4,0,False,False,False,False,False,same
+opus_pdd_group_b3,2,3,2,easy_single_obstacle_detour,easy,single_detour,Single obstacle on the direct path requiring one simple detour.,24,GOAL_REACHED,GOAL_REACHED,13,20,7,True,False,True,False,False,regression
+opus_pdd_group_b3,2,3,3,easy_l_wall_one_turn,easy,single_detour,L-shaped wall forcing a simple route with one major turn.,28,TIMEOUT,TIMEOUT,28,28,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,4,easy_corner_goal_blocked,easy,single_detour,Goal is in a corner with one obstacle blocking the most direct route.,26,TIMEOUT,TIMEOUT,26,26,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,5,easy_two_isolated_obstacles,easy,single_detour,Slightly longer path with two isolated obstacles on the direct route.,30,TIMEOUT,TIMEOUT,30,30,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,6,medium_straight_narrow_corridor,medium,corridor,Narrow one-cell-wide corridor running straight through the map.,15,TIMEOUT,TIMEOUT,15,15,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,7,medium_s_shaped_path,medium,corridor,S-shaped corridor with two forced turns.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,8,medium_central_obstacle,medium,single_detour,Large central obstacle can be navigated around either side.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,9,medium_single_valid_detour,medium,single_detour,Direct route is blocked and only one detour gap is available.,18,TIMEOUT,TIMEOUT,18,18,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,10,medium_dead_end_corridors,medium,dead_end,Two corridor choices exist; one is a dead end and one reaches the goal.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,11,hard_maze_one_dead_end,hard,dead_end,Maze-like layout with one dead end before the correct path.,24,TIMEOUT,TIMEOUT,24,24,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,12,hard_u_trap_goal,hard,counterintuitive,U-shaped trap in front of the goal requiring the robot to go around.,24,TIMEOUT,TIMEOUT,24,24,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,13,hard_long_detour_budget,hard,counterintuitive,Long detour required; naive direct movement exhausts the tight budget.,26,TIMEOUT,TIMEOUT,26,26,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,14,hard_two_dead_ends,hard,dead_end,"Two dead ends and one correct path, with the correct route initially counterintuitive.",28,TIMEOUT,TIMEOUT,28,28,0,True,False,False,True,False,drift
+opus_pdd_group_b3,2,3,15,hard_move_away_corridor,hard,counterintuitive,Corridor forces the robot to move away from the nearby goal before reaching it.,22,TIMEOUT,TIMEOUT,22,22,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,1,easy_open_short_path,easy,straight_line,"Open grid, no obstacles, short path.",20,GOAL_REACHED,GOAL_REACHED,4,4,0,False,False,False,False,False,same
+opus_pdd_group_b3,3,4,2,easy_single_obstacle_detour,easy,single_detour,Single obstacle on the direct path requiring one simple detour.,24,GOAL_REACHED,TIMEOUT,20,24,4,True,True,True,False,True,regression
+opus_pdd_group_b3,3,4,3,easy_l_wall_one_turn,easy,single_detour,L-shaped wall forcing a simple route with one major turn.,28,TIMEOUT,TIMEOUT,28,28,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,4,easy_corner_goal_blocked,easy,single_detour,Goal is in a corner with one obstacle blocking the most direct route.,26,TIMEOUT,TIMEOUT,26,26,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,5,easy_two_isolated_obstacles,easy,single_detour,Slightly longer path with two isolated obstacles on the direct route.,30,TIMEOUT,TIMEOUT,30,30,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,6,medium_straight_narrow_corridor,medium,corridor,Narrow one-cell-wide corridor running straight through the map.,15,TIMEOUT,TIMEOUT,15,15,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,7,medium_s_shaped_path,medium,corridor,S-shaped corridor with two forced turns.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,8,medium_central_obstacle,medium,single_detour,Large central obstacle can be navigated around either side.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,9,medium_single_valid_detour,medium,single_detour,Direct route is blocked and only one detour gap is available.,18,TIMEOUT,TIMEOUT,18,18,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,10,medium_dead_end_corridors,medium,dead_end,Two corridor choices exist; one is a dead end and one reaches the goal.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,11,hard_maze_one_dead_end,hard,dead_end,Maze-like layout with one dead end before the correct path.,24,TIMEOUT,TIMEOUT,24,24,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,12,hard_u_trap_goal,hard,counterintuitive,U-shaped trap in front of the goal requiring the robot to go around.,24,TIMEOUT,TIMEOUT,24,24,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,13,hard_long_detour_budget,hard,counterintuitive,Long detour required; naive direct movement exhausts the tight budget.,26,TIMEOUT,TIMEOUT,26,26,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,14,hard_two_dead_ends,hard,dead_end,"Two dead ends and one correct path, with the correct route initially counterintuitive.",28,TIMEOUT,TIMEOUT,28,28,0,True,False,False,True,False,drift
+opus_pdd_group_b3,3,4,15,hard_move_away_corridor,hard,counterintuitive,Corridor forces the robot to move away from the nearby goal before reaching it.,22,TIMEOUT,TIMEOUT,22,22,0,True,False,False,True,False,drift
+opus_pdd_group_b3,4,5,1,easy_open_short_path,easy,straight_line,"Open grid, no obstacles, short path.",20,GOAL_REACHED,GOAL_REACHED,4,4,0,False,False,False,False,False,same
+opus_pdd_group_b3,4,5,2,easy_single_obstacle_detour,easy,single_detour,Single obstacle on the direct path requiring one simple detour.,24,TIMEOUT,GOAL_REACHED,24,10,-14,True,True,True,False,True,improvement
+opus_pdd_group_b3,4,5,3,easy_l_wall_one_turn,easy,single_detour,L-shaped wall forcing a simple route with one major turn.,28,TIMEOUT,GOAL_REACHED,28,10,-18,True,True,True,False,True,improvement
+opus_pdd_group_b3,4,5,4,easy_corner_goal_blocked,easy,single_detour,Goal is in a corner with one obstacle blocking the most direct route.,26,TIMEOUT,GOAL_REACHED,26,10,-16,True,True,True,False,True,improvement
+opus_pdd_group_b3,4,5,5,easy_two_isolated_obstacles,easy,single_detour,Slightly longer path with two isolated obstacles on the direct route.,30,TIMEOUT,GOAL_REACHED,30,14,-16,True,True,True,False,True,improvement
+opus_pdd_group_b3,4,5,6,medium_straight_narrow_corridor,medium,corridor,Narrow one-cell-wide corridor running straight through the map.,15,TIMEOUT,TIMEOUT,15,15,0,True,False,False,True,False,drift
+opus_pdd_group_b3,4,5,7,medium_s_shaped_path,medium,corridor,S-shaped corridor with two forced turns.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,4,5,8,medium_central_obstacle,medium,single_detour,Large central obstacle can be navigated around either side.,20,TIMEOUT,GOAL_REACHED,20,14,-6,True,True,True,False,True,improvement
+opus_pdd_group_b3,4,5,9,medium_single_valid_detour,medium,single_detour,Direct route is blocked and only one detour gap is available.,18,TIMEOUT,GOAL_REACHED,18,15,-3,True,True,True,False,True,improvement
+opus_pdd_group_b3,4,5,10,medium_dead_end_corridors,medium,dead_end,Two corridor choices exist; one is a dead end and one reaches the goal.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,4,5,11,hard_maze_one_dead_end,hard,dead_end,Maze-like layout with one dead end before the correct path.,24,TIMEOUT,GOAL_REACHED,24,20,-4,True,True,True,False,True,improvement
+opus_pdd_group_b3,4,5,12,hard_u_trap_goal,hard,counterintuitive,U-shaped trap in front of the goal requiring the robot to go around.,24,TIMEOUT,TIMEOUT,24,24,0,True,False,False,True,False,drift
+opus_pdd_group_b3,4,5,13,hard_long_detour_budget,hard,counterintuitive,Long detour required; naive direct movement exhausts the tight budget.,26,TIMEOUT,TIMEOUT,26,26,0,True,False,False,True,False,drift
+opus_pdd_group_b3,4,5,14,hard_two_dead_ends,hard,dead_end,"Two dead ends and one correct path, with the correct route initially counterintuitive.",28,TIMEOUT,TIMEOUT,28,28,0,True,False,False,True,False,drift
+opus_pdd_group_b3,4,5,15,hard_move_away_corridor,hard,counterintuitive,Corridor forces the robot to move away from the nearby goal before reaching it.,22,TIMEOUT,TIMEOUT,22,22,0,True,False,False,True,False,drift
+opus_pdd_group_b3,5,6,1,easy_open_short_path,easy,straight_line,"Open grid, no obstacles, short path.",20,GOAL_REACHED,GOAL_REACHED,4,4,0,False,False,False,False,False,same
+opus_pdd_group_b3,5,6,2,easy_single_obstacle_detour,easy,single_detour,Single obstacle on the direct path requiring one simple detour.,24,GOAL_REACHED,GOAL_REACHED,10,10,0,False,False,False,False,False,same
+opus_pdd_group_b3,5,6,3,easy_l_wall_one_turn,easy,single_detour,L-shaped wall forcing a simple route with one major turn.,28,GOAL_REACHED,GOAL_REACHED,10,10,0,False,False,False,False,False,same
+opus_pdd_group_b3,5,6,4,easy_corner_goal_blocked,easy,single_detour,Goal is in a corner with one obstacle blocking the most direct route.,26,GOAL_REACHED,GOAL_REACHED,10,10,0,True,False,False,True,False,drift
+opus_pdd_group_b3,5,6,5,easy_two_isolated_obstacles,easy,single_detour,Slightly longer path with two isolated obstacles on the direct route.,30,GOAL_REACHED,GOAL_REACHED,14,14,0,False,False,False,False,False,same
+opus_pdd_group_b3,5,6,6,medium_straight_narrow_corridor,medium,corridor,Narrow one-cell-wide corridor running straight through the map.,15,TIMEOUT,TIMEOUT,15,15,0,True,False,False,True,False,drift
+opus_pdd_group_b3,5,6,7,medium_s_shaped_path,medium,corridor,S-shaped corridor with two forced turns.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,5,6,8,medium_central_obstacle,medium,single_detour,Large central obstacle can be navigated around either side.,20,GOAL_REACHED,GOAL_REACHED,14,16,2,True,False,True,False,False,regression
+opus_pdd_group_b3,5,6,9,medium_single_valid_detour,medium,single_detour,Direct route is blocked and only one detour gap is available.,18,GOAL_REACHED,GOAL_REACHED,15,18,3,True,False,True,False,False,regression
+opus_pdd_group_b3,5,6,10,medium_dead_end_corridors,medium,dead_end,Two corridor choices exist; one is a dead end and one reaches the goal.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,5,6,11,hard_maze_one_dead_end,hard,dead_end,Maze-like layout with one dead end before the correct path.,24,GOAL_REACHED,TIMEOUT,20,24,4,True,True,True,False,True,regression
+opus_pdd_group_b3,5,6,12,hard_u_trap_goal,hard,counterintuitive,U-shaped trap in front of the goal requiring the robot to go around.,24,TIMEOUT,TIMEOUT,24,24,0,True,False,False,True,False,drift
+opus_pdd_group_b3,5,6,13,hard_long_detour_budget,hard,counterintuitive,Long detour required; naive direct movement exhausts the tight budget.,26,TIMEOUT,TIMEOUT,26,26,0,True,False,False,True,False,drift
+opus_pdd_group_b3,5,6,14,hard_two_dead_ends,hard,dead_end,"Two dead ends and one correct path, with the correct route initially counterintuitive.",28,TIMEOUT,TIMEOUT,28,28,0,True,False,False,True,False,drift
+opus_pdd_group_b3,5,6,15,hard_move_away_corridor,hard,counterintuitive,Corridor forces the robot to move away from the nearby goal before reaching it.,22,TIMEOUT,TIMEOUT,22,22,0,True,False,False,True,False,drift
+opus_pdd_group_b3,6,7,1,easy_open_short_path,easy,straight_line,"Open grid, no obstacles, short path.",20,GOAL_REACHED,TIMEOUT,4,20,16,True,True,True,False,True,regression
+opus_pdd_group_b3,6,7,2,easy_single_obstacle_detour,easy,single_detour,Single obstacle on the direct path requiring one simple detour.,24,GOAL_REACHED,TIMEOUT,10,24,14,True,True,True,False,True,regression
+opus_pdd_group_b3,6,7,3,easy_l_wall_one_turn,easy,single_detour,L-shaped wall forcing a simple route with one major turn.,28,GOAL_REACHED,TIMEOUT,10,28,18,True,True,True,False,True,regression
+opus_pdd_group_b3,6,7,4,easy_corner_goal_blocked,easy,single_detour,Goal is in a corner with one obstacle blocking the most direct route.,26,GOAL_REACHED,TIMEOUT,10,26,16,True,True,True,False,True,regression
+opus_pdd_group_b3,6,7,5,easy_two_isolated_obstacles,easy,single_detour,Slightly longer path with two isolated obstacles on the direct route.,30,GOAL_REACHED,TIMEOUT,14,30,16,True,True,True,False,True,regression
+opus_pdd_group_b3,6,7,6,medium_straight_narrow_corridor,medium,corridor,Narrow one-cell-wide corridor running straight through the map.,15,TIMEOUT,TIMEOUT,15,15,0,True,False,False,True,False,drift
+opus_pdd_group_b3,6,7,7,medium_s_shaped_path,medium,corridor,S-shaped corridor with two forced turns.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,6,7,8,medium_central_obstacle,medium,single_detour,Large central obstacle can be navigated around either side.,20,GOAL_REACHED,TIMEOUT,16,20,4,True,True,True,False,True,regression
+opus_pdd_group_b3,6,7,9,medium_single_valid_detour,medium,single_detour,Direct route is blocked and only one detour gap is available.,18,GOAL_REACHED,TIMEOUT,18,18,0,True,True,False,False,True,regression
+opus_pdd_group_b3,6,7,10,medium_dead_end_corridors,medium,dead_end,Two corridor choices exist; one is a dead end and one reaches the goal.,20,TIMEOUT,TIMEOUT,20,20,0,True,False,False,True,False,drift
+opus_pdd_group_b3,6,7,11,hard_maze_one_dead_end,hard,dead_end,Maze-like layout with one dead end before the correct path.,24,TIMEOUT,TIMEOUT,24,24,0,True,False,False,True,False,drift
+opus_pdd_group_b3,6,7,12,hard_u_trap_goal,hard,counterintuitive,U-shaped trap in front of the goal requiring the robot to go around.,24,TIMEOUT,TIMEOUT,24,24,0,True,False,False,True,False,drift
+opus_pdd_group_b3,6,7,13,hard_long_detour_budget,hard,counterintuitive,Long detour required; naive direct movement exhausts the tight budget.,26,TIMEOUT,TIMEOUT,26,26,0,True,False,False,True,False,drift
+opus_pdd_group_b3,6,7,14,hard_two_dead_ends,hard,dead_end,"Two dead ends and one correct path, with the correct route initially counterintuitive.",28,TIMEOUT,TIMEOUT,28,28,0,True,False,False,True,False,drift
+opus_pdd_group_b3,6,7,15,hard_move_away_corridor,hard,counterintuitive,Corridor forces the robot to move away from the nearby goal before reaching it.,22,TIMEOUT,TIMEOUT,22,22,0,True,False,False,True,False,drift
+opus_pdd_group_b3,7,8,1,easy_open_short_path,easy,straight_line,"Open grid, no obstacles, short path.",20,TIMEOUT,TIMEOUT,20,20,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,2,easy_single_obstacle_detour,easy,single_detour,Single obstacle on the direct path requiring one simple detour.,24,TIMEOUT,TIMEOUT,24,24,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,3,easy_l_wall_one_turn,easy,single_detour,L-shaped wall forcing a simple route with one major turn.,28,TIMEOUT,TIMEOUT,28,28,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,4,easy_corner_goal_blocked,easy,single_detour,Goal is in a corner with one obstacle blocking the most direct route.,26,TIMEOUT,TIMEOUT,26,26,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,5,easy_two_isolated_obstacles,easy,single_detour,Slightly longer path with two isolated obstacles on the direct route.,30,TIMEOUT,TIMEOUT,30,30,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,6,medium_straight_narrow_corridor,medium,corridor,Narrow one-cell-wide corridor running straight through the map.,15,TIMEOUT,TIMEOUT,15,15,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,7,medium_s_shaped_path,medium,corridor,S-shaped corridor with two forced turns.,20,TIMEOUT,TIMEOUT,20,20,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,8,medium_central_obstacle,medium,single_detour,Large central obstacle can be navigated around either side.,20,TIMEOUT,TIMEOUT,20,20,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,9,medium_single_valid_detour,medium,single_detour,Direct route is blocked and only one detour gap is available.,18,TIMEOUT,TIMEOUT,18,18,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,10,medium_dead_end_corridors,medium,dead_end,Two corridor choices exist; one is a dead end and one reaches the goal.,20,TIMEOUT,TIMEOUT,20,20,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,11,hard_maze_one_dead_end,hard,dead_end,Maze-like layout with one dead end before the correct path.,24,TIMEOUT,TIMEOUT,24,24,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,12,hard_u_trap_goal,hard,counterintuitive,U-shaped trap in front of the goal requiring the robot to go around.,24,TIMEOUT,TIMEOUT,24,24,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,13,hard_long_detour_budget,hard,counterintuitive,Long detour required; naive direct movement exhausts the tight budget.,26,TIMEOUT,TIMEOUT,26,26,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,14,hard_two_dead_ends,hard,dead_end,"Two dead ends and one correct path, with the correct route initially counterintuitive.",28,TIMEOUT,TIMEOUT,28,28,0,False,False,False,False,False,same
+opus_pdd_group_b3,7,8,15,hard_move_away_corridor,hard,counterintuitive,Corridor forces the robot to move away from the nearby goal before reaching it.,22,TIMEOUT,TIMEOUT,22,22,0,False,False,False,False,False,same

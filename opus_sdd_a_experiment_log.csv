@@ -1,0 +1,5 @@
+chain,development_method,version,validity_status,controller_path,scenarios,success_count,success_rate,collision_count,collision_rate,timeout_count,timeout_rate,invalid_count,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+opus_sdd_a,SDD,1,valid,controllers/opus_sdd_a/controller_v1.py,15,9,0.6,0,0.0,6,0.4,0,0.0,17.4,9.467,0.397
+opus_sdd_a,SDD,2,valid,controllers/opus_sdd_a/controller_v2.py,15,1,0.067,0,0.0,14,0.933,0,0.0,21.933,9.467,0.067
+opus_sdd_a,SDD,3,valid,controllers/opus_sdd_a/controller_v3.py,15,8,0.533,0,0.0,7,0.467,0,0.0,17.467,9.467,0.371
+opus_sdd_a,SDD,4,valid,controllers/opus_sdd_a/controller_v4.py,15,6,0.4,0,0.0,9,0.6,0,0.0,18.267,9.467,0.269

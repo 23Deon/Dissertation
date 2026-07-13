@@ -1,0 +1,8 @@
+approach,from_version,to_version,challenge_type,comparisons,drift_count,drift_rate,regression_count,regression_rate,improvement_count,improvement_rate,outcome_drift_count,outcome_drift_rate,pure_trace_drift_count,pure_trace_drift_rate
+opus_pdd_group_b3,1,2,all,15,15,1.0,0,0.0,15,1.0,15,1.0,0,0.0
+opus_pdd_group_b3,2,3,all,15,14,0.933,1,0.067,0,0.0,0,0.0,13,0.867
+opus_pdd_group_b3,3,4,all,15,14,0.933,1,0.067,0,0.0,1,0.067,13,0.867
+opus_pdd_group_b3,4,5,all,15,14,0.933,0,0.0,7,0.467,7,0.467,7,0.467
+opus_pdd_group_b3,5,6,all,15,11,0.733,3,0.2,0,0.0,1,0.067,8,0.533
+opus_pdd_group_b3,6,7,all,15,15,1.0,7,0.467,0,0.0,7,0.467,8,0.533
+opus_pdd_group_b3,7,8,all,15,0,0.0,0,0.0,0,0.0,0,0.0,0,0.0

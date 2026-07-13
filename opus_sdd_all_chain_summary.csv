@@ -1,0 +1,5 @@
+approach,development_method,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+opus_sdd,SDD,1,15,0.0,0.0,1.0,0.0,23.0,9.467,0.0
+opus_sdd_a,SDD,4,60,0.4,0.0,0.6,0.0,18.767,9.467,0.276
+opus_sdd_b,SDD,4,60,0.3,0.0,0.7,0.0,20.083,9.467,0.197
+opus_sdd_c,SDD,4,60,0.467,0.0,0.533,0.0,17.45,9.467,0.325

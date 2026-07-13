@@ -1,0 +1,5 @@
+chain,development_method,version,validity_status,controller_path,scenarios,success_count,success_rate,collision_count,collision_rate,timeout_count,timeout_rate,invalid_count,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+gpt_pdd_group_a2,PDD,4,all_invalid,controllers/pdd_group_a2/controller_v4.py,15,0,0.0,0,0.0,0,0.0,15,1.0,0.0,9.467,0.0
+gpt_pdd_group_a2,PDD,5,all_invalid,controllers/pdd_group_a2/controller_v5.py,15,0,0.0,0,0.0,0,0.0,15,1.0,0.0,9.467,0.0
+opus_pdd_group_a2,PDD,4,valid,controllers/opus_pdd_group_a2/controller_v4.py,15,0,0.0,0,0.0,15,1.0,0,0.0,23.0,9.467,0.0
+opus_pdd_group_a2,PDD,5,valid,controllers/opus_pdd_group_a2/controller_v5.py,15,0,0.0,0,0.0,15,1.0,0,0.0,23.0,9.467,0.0

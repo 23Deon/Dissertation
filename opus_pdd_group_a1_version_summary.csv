@@ -1,0 +1,4 @@
+approach,version,challenge_type,scenarios,success_count,success_rate,collision_count,collision_rate,timeout_count,timeout_rate,invalid_count,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+opus_pdd_group_a1,1,all,15,0,0.0,0,0.0,15,1.0,0,0.0,23.0,9.467,0.0
+opus_pdd_group_a1,2,all,15,0,0.0,0,0.0,15,1.0,0,0.0,23.0,9.467,0.0
+opus_pdd_group_a1,3,all,15,0,0.0,0,0.0,15,1.0,0,0.0,23.0,9.467,0.0

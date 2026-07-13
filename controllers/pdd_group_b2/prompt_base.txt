@@ -1,0 +1,5 @@
+Write Python code for a grid robot controller. The robot is trying to reach a goal position. It knows its current position, heading, and the goal position. It can choose to move forward, turn left, turn right, or wait.
+Use these imports: from gridbot.sim.actions import Action, Heading
+Define a class Controller with a method act(self, observation) -> Action.
+The observation has: observation.position, observation.heading, observation.goal.
+Use the existing enum names exactly: Heading.N, Heading.E, Heading.S, Heading.W and Action.FORWARD, Action.TURN_LEFT, Action.TURN_RIGHT, Action.WAIT.

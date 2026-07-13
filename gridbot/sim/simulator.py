@@ -44,29 +44,31 @@ class Simulator:
         if s.done:
             return s.last_event
 
-        # Step limit check (deterministic termination)
-        if s.t >= self.max_steps:
-            s.done = True
-            s.last_event = Event.TIMEOUT
-            self._log(action, s.last_event)
-            return s.last_event
-
         s.t += 1  # advance time deterministically
 
         if action == Action.WAIT:
             s.last_event = Event.OK
+            if s.t >= self.max_steps:
+                s.done = True
+                s.last_event = Event.TIMEOUT
             self._log(action, s.last_event)
             return s.last_event
 
         if action == Action.TURN_LEFT:
             s.heading = turn_left(s.heading)
             s.last_event = Event.OK
+            if s.t >= self.max_steps:
+                s.done = True
+                s.last_event = Event.TIMEOUT
             self._log(action, s.last_event)
             return s.last_event
 
         if action == Action.TURN_RIGHT:
             s.heading = turn_right(s.heading)
             s.last_event = Event.OK
+            if s.t >= self.max_steps:
+                s.done = True
+                s.last_event = Event.TIMEOUT
             self._log(action, s.last_event)
             return s.last_event
 
@@ -75,8 +77,12 @@ class Simulator:
         new_pos = (s.position[0] + dx, s.position[1] + dy)
 
         if (not self.grid.in_bounds(new_pos)) or self.grid.is_obstacle(new_pos):
-            s.done = True
-            s.last_event = Event.COLLISION
+            # A blocked move is non-fatal: the robot stays in place, spends a step,
+            # and can try a different deterministic action next turn.
+            s.last_event = Event.OK
+            if s.t >= self.max_steps:
+                s.done = True
+                s.last_event = Event.TIMEOUT
             self._log(action, s.last_event)
             return s.last_event
 
@@ -89,5 +95,8 @@ class Simulator:
             return s.last_event
 
         s.last_event = Event.OK
+        if s.t >= self.max_steps:
+            s.done = True
+            s.last_event = Event.TIMEOUT
         self._log(action, s.last_event)
         return s.last_event

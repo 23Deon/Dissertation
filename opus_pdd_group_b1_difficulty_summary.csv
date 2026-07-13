@@ -1,0 +1,4 @@
+approach,difficulty,challenge_type,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score,drift_rate,regression_rate,improvement_rate,pure_trace_drift_rate
+opus_pdd_group_b1,easy,all,8,40,0.4,0.0,0.6,0.0,20.2,7.0,0.298,0.514,0.171,0.143,0.2
+opus_pdd_group_b1,hard,all,8,40,0.025,0.0,0.975,0.0,24.625,11.2,0.018,0.8,0.029,0.029,0.743
+opus_pdd_group_b1,medium,all,8,40,0.075,0.0,0.925,0.0,18.3,10.2,0.053,0.743,0.086,0.057,0.6

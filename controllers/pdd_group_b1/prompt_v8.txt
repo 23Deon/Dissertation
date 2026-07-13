@@ -1,0 +1,45 @@
+Write Python code for a grid robot controller. The robot is trying to reach a goal position. It knows its current position, heading, and the goal position. It can choose to move forward, turn left, turn right, or wait.
+Use these imports: from gridbot.sim.actions import Action, Heading
+Define a class Controller with a method act(self, observation) -> Action.
+The observation has: observation.position, observation.heading, observation.goal.
+Use the existing enum names exactly: Heading.N, Heading.E, Heading.S, Heading.W and Action.FORWARD, Action.TURN_LEFT, Action.TURN_RIGHT, Action.WAIT.
+
+Previous controller results for this chain:
+- Version: v7
+- Successes: 3/15
+- Collisions: 8/15
+- Timeouts: 4/15
+- Invalid runs: 0/15
+- Average steps: 9.933
+- Version-to-version result from v6 to v7: 4/15 scenarios changed, 0 improvements, 1 regression.
+
+Successful scenarios to preserve:
+- 1/easy_open_short_path: GOAL_REACHED in 4 steps
+- 3/easy_l_wall_one_turn: GOAL_REACHED in 10 steps
+- 6/medium_straight_narrow_corridor: GOAL_REACHED in 7 steps
+
+Regression to recover:
+- 11/hard_maze_one_dead_end was GOAL_REACHED in v6 but became TIMEOUT in v7.
+
+Main issue to address:
+- v7 introduced timeout behaviour on hard scenarios 11, 13, 14, and 15.
+- Do not use a policy that can wander until the step budget expires.
+- The previous axis-priority guard reduced collisions but made the controller much less decisive.
+- Prefer a deterministic, simple policy that either follows a fixed axis order or uses a bounded alternate axis choice without long loops.
+- Do not depend on obstacle-sensing fields such as front_blocked; only position, heading, and goal are guaranteed.
+
+Failing scenarios:
+- 2/easy_single_obstacle_detour: COLLISION, steps=2
+- 4/easy_corner_goal_blocked: COLLISION, steps=4
+- 5/easy_two_isolated_obstacles: COLLISION, steps=2
+- 7/medium_s_shaped_path: COLLISION, steps=5
+- 8/medium_central_obstacle: COLLISION, steps=2
+- 9/medium_single_valid_detour: COLLISION, steps=4
+- 10/medium_dead_end_corridors: COLLISION, steps=2
+- 11/hard_maze_one_dead_end: TIMEOUT, steps=24
+- 12/hard_u_trap_goal: COLLISION, steps=7
+- 13/hard_long_detour_budget: TIMEOUT, steps=26
+- 14/hard_two_dead_ends: TIMEOUT, steps=28
+- 15/hard_move_away_corridor: TIMEOUT, steps=22
+
+Improve the controller so it is more successful and more efficient. Prioritise eliminating all timeouts and recovering scenario 11 while preserving scenarios 1, 3, and 6. Output only Python code.

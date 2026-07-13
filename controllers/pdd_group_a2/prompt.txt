@@ -1,0 +1,1 @@
+Write Python code for a grid robot controller. The robot is trying to reach a goal position. It knows its current position, heading, and the goal position. It can choose to move forward, turn left, turn right, or wait. Make the controller try to reach the goal.

@@ -1,0 +1,32 @@
+Write Python code for a grid robot controller. The robot is trying to reach a goal position. It knows its current position, heading, and the goal position. It can choose to move forward, turn left, turn right, or wait.
+Use these imports: from gridbot.sim.actions import Action, Heading
+Define a class Controller with a method act(self, observation) -> Action.
+The observation has: observation.position, observation.heading, observation.goal.
+Use the existing enum names exactly: Heading.N, Heading.E, Heading.S, Heading.W and Action.FORWARD, Action.TURN_LEFT, Action.TURN_RIGHT, Action.WAIT.
+
+Previous controller results for this chain:
+- Successes: 0/15
+- Collisions: 0/15
+- Timeouts: 0/15
+- Invalid runs: 15/15
+- Average steps: 0.0
+- Runtime error: 'Observation' object has no attribute 'front_blocked'
+
+Failing scenarios:
+- 1/easy_open_short_path: event=INVALID_CONTROLLER, steps=0
+- 2/easy_single_obstacle_detour: event=INVALID_CONTROLLER, steps=0
+- 3/easy_l_wall_one_turn: event=INVALID_CONTROLLER, steps=0
+- 4/easy_corner_goal_blocked: event=INVALID_CONTROLLER, steps=0
+- 5/easy_two_isolated_obstacles: event=INVALID_CONTROLLER, steps=0
+- 6/medium_straight_narrow_corridor: event=INVALID_CONTROLLER, steps=0
+- 7/medium_s_shaped_path: event=INVALID_CONTROLLER, steps=0
+- 8/medium_central_obstacle: event=INVALID_CONTROLLER, steps=0
+- 9/medium_single_valid_detour: event=INVALID_CONTROLLER, steps=0
+- 10/medium_dead_end_corridors: event=INVALID_CONTROLLER, steps=0
+- 11/hard_maze_one_dead_end: event=INVALID_CONTROLLER, steps=0
+- 12/hard_u_trap_goal: event=INVALID_CONTROLLER, steps=0
+- 13/hard_long_detour_budget: event=INVALID_CONTROLLER, steps=0
+- 14/hard_two_dead_ends: event=INVALID_CONTROLLER, steps=0
+- 15/hard_move_away_corridor: event=INVALID_CONTROLLER, steps=0
+
+Improve the controller so it is more successful and more efficient. Prioritise reaching the goal on more scenarios. If a scenario already succeeds, try not to make it worse. Output only Python code.

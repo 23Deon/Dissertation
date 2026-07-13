@@ -1,0 +1,11 @@
+approach,challenge_type,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score,drift_rate,regression_rate,improvement_rate,pure_trace_drift_rate
+gpt_pdd_group_b3,corridor,8,16,0.438,0.0,0.438,0.125,11.812,11.0,0.438,0.5,0.0,0.143,0.357
+gpt_pdd_group_b3,counterintuitive,8,24,0.0,0.0,0.875,0.125,21.0,11.0,0.0,0.143,0.0,0.143,0.0
+gpt_pdd_group_b3,dead_end,8,24,0.25,0.0,0.625,0.125,18.708,10.667,0.213,0.381,0.095,0.19,0.095
+gpt_pdd_group_b3,single_detour,8,48,0.188,0.0,0.688,0.125,18.458,8.5,0.14,0.333,0.119,0.214,0.0
+gpt_pdd_group_b3,straight_line,8,8,0.875,0.0,0.0,0.125,3.5,4.0,0.875,0.143,0.0,0.143,0.0
+opus_pdd_group_b3,corridor,8,16,0.0,0.0,0.875,0.125,15.312,11.0,0.0,0.857,0.0,0.143,0.714
+opus_pdd_group_b3,counterintuitive,8,24,0.0,0.0,0.875,0.125,21.0,11.0,0.0,0.857,0.0,0.143,0.714
+opus_pdd_group_b3,dead_end,8,24,0.042,0.0,0.833,0.125,20.833,10.667,0.025,0.857,0.048,0.19,0.619
+opus_pdd_group_b3,single_detour,8,48,0.292,0.0,0.583,0.125,18.042,8.5,0.189,0.786,0.238,0.286,0.262
+opus_pdd_group_b3,straight_line,8,8,0.625,0.0,0.25,0.125,7.5,4.0,0.625,0.286,0.143,0.143,0.0

@@ -1,0 +1,4 @@
+approach,from_version,to_version,challenge_type,comparisons,drift_count,drift_rate,regression_count,regression_rate,improvement_count,improvement_rate,outcome_drift_count,outcome_drift_rate,pure_trace_drift_count,pure_trace_drift_rate
+opus_sdd_a,1,2,all,15,14,0.933,8,0.533,0,0.0,8,0.533,6,0.4
+opus_sdd_a,2,3,all,15,14,0.933,0,0.0,7,0.467,7,0.467,7,0.467
+opus_sdd_a,3,4,all,15,12,0.8,5,0.333,1,0.067,4,0.267,6,0.4

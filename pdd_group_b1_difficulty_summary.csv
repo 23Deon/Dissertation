@@ -1,0 +1,7 @@
+approach,difficulty,challenge_type,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score,drift_rate,regression_rate,improvement_rate,pure_trace_drift_rate
+gpt_pdd_group_b1,easy,all,8,40,0.35,0.0,0.525,0.125,17.25,7.0,0.292,0.2,0.029,0.171,0.0
+gpt_pdd_group_b1,hard,all,8,40,0.05,0.0,0.825,0.125,21.15,11.2,0.046,0.457,0.029,0.2,0.229
+gpt_pdd_group_b1,medium,all,8,40,0.175,0.0,0.7,0.125,14.875,10.2,0.175,0.171,0.0,0.143,0.029
+opus_pdd_group_b1,easy,all,8,40,0.4,0.0,0.6,0.0,20.2,7.0,0.298,0.514,0.171,0.143,0.2
+opus_pdd_group_b1,hard,all,8,40,0.025,0.0,0.975,0.0,24.625,11.2,0.018,0.8,0.029,0.029,0.743
+opus_pdd_group_b1,medium,all,8,40,0.075,0.0,0.925,0.0,18.3,10.2,0.053,0.743,0.086,0.057,0.6

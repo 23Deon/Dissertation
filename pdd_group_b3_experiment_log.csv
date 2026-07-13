@@ -1,0 +1,17 @@
+chain,development_method,version,validity_status,controller_path,scenarios,success_count,success_rate,collision_count,collision_rate,timeout_count,timeout_rate,invalid_count,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+gpt_pdd_group_b3,PDD,1,all_invalid,controllers/pdd_group_b3/controller_v1.py,15,0,0.0,0,0.0,0,0.0,15,1.0,0.0,9.467,0.0
+gpt_pdd_group_b3,PDD,2,valid,controllers/pdd_group_b3/controller_v2.py,15,4,0.267,0,0.0,11,0.733,0,0.0,19.467,9.467,0.255
+gpt_pdd_group_b3,PDD,3,valid,controllers/pdd_group_b3/controller_v3.py,15,5,0.333,0,0.0,10,0.667,0,0.0,18.667,9.467,0.293
+gpt_pdd_group_b3,PDD,4,valid,controllers/pdd_group_b3/controller_v4.py,15,4,0.267,0,0.0,11,0.733,0,0.0,19.467,9.467,0.255
+gpt_pdd_group_b3,PDD,5,valid,controllers/pdd_group_b3/controller_v5.py,15,4,0.267,0,0.0,11,0.733,0,0.0,19.467,9.467,0.255
+gpt_pdd_group_b3,PDD,6,valid,controllers/pdd_group_b3/controller_v6.py,15,5,0.333,0,0.0,10,0.667,0,0.0,19.867,9.467,0.241
+gpt_pdd_group_b3,PDD,7,valid,controllers/pdd_group_b3/controller_v7.py,15,3,0.2,0,0.0,12,0.8,0,0.0,20.667,9.467,0.169
+gpt_pdd_group_b3,PDD,8,valid,controllers/pdd_group_b3/controller_v8.py,15,4,0.267,0,0.0,11,0.733,0,0.0,19.467,9.467,0.255
+opus_pdd_group_b3,PDD,1,all_invalid,controllers/opus_pdd_group_b3/controller_v1.py,15,0,0.0,0,0.0,0,0.0,15,1.0,0.0,9.467,0.0
+opus_pdd_group_b3,PDD,2,valid,controllers/opus_pdd_group_b3/controller_v2.py,15,2,0.133,0,0.0,13,0.867,0,0.0,21.2,9.467,0.097
+opus_pdd_group_b3,PDD,3,valid,controllers/opus_pdd_group_b3/controller_v3.py,15,2,0.133,0,0.0,13,0.867,0,0.0,21.667,9.467,0.087
+opus_pdd_group_b3,PDD,4,valid,controllers/opus_pdd_group_b3/controller_v4.py,15,1,0.067,0,0.0,14,0.933,0,0.0,21.933,9.467,0.067
+opus_pdd_group_b3,PDD,5,valid,controllers/opus_pdd_group_b3/controller_v5.py,15,8,0.533,0,0.0,7,0.467,0,0.0,16.8,9.467,0.39
+opus_pdd_group_b3,PDD,6,valid,controllers/opus_pdd_group_b3/controller_v6.py,15,7,0.467,0,0.0,8,0.533,0,0.0,17.4,9.467,0.337
+opus_pdd_group_b3,PDD,7,valid,controllers/opus_pdd_group_b3/controller_v7.py,15,0,0.0,0,0.0,15,1.0,0,0.0,23.0,9.467,0.0
+opus_pdd_group_b3,PDD,8,valid,controllers/opus_pdd_group_b3/controller_v8.py,15,0,0.0,0,0.0,15,1.0,0,0.0,23.0,9.467,0.0

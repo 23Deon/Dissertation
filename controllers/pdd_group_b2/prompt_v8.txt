@@ -1,0 +1,42 @@
+Write Python code for a grid robot controller. The robot is trying to reach a goal position. It knows its current position, heading, and the goal position. It can choose to move forward, turn left, turn right, or wait.
+Use these imports: from gridbot.sim.actions import Action, Heading
+Define a class Controller with a method act(self, observation) -> Action.
+The observation has: observation.position, observation.heading, observation.goal.
+Use the existing enum names exactly: Heading.N, Heading.E, Heading.S, Heading.W and Action.FORWARD, Action.TURN_LEFT, Action.TURN_RIGHT, Action.WAIT.
+
+Previous controller results for this chain:
+- Version: v7
+- Successes: 2/15
+- Collisions: 13/15
+- Timeouts: 0/15
+- Invalid runs: 0/15
+- Average steps: 3.533
+- Version-to-version result from v6 to v7: 6/15 scenarios changed, 0 clear improvements, but the timeout on scenario 12 was removed.
+
+Successful scenarios to preserve:
+- 1/easy_open_short_path: GOAL_REACHED in 4 steps
+- 6/medium_straight_narrow_corridor: GOAL_REACHED in 7 steps
+
+Main issue to address:
+- v7 removed the timeout but still only succeeds on 2/15 scenarios.
+- The controller collides early on most detour scenarios, especially 2, 3, 4, 5, 7, and 8.
+- Keep the no-timeout behaviour from v7, but add a simple deterministic detour bias that can handle at least one easy obstacle scenario.
+- Avoid stateful loop-heavy memory; do not depend on obstacle-sensing fields such as front_blocked.
+- Only position, heading, and goal are guaranteed.
+
+Failing scenarios:
+- 2/easy_single_obstacle_detour: COLLISION, steps=2
+- 3/easy_l_wall_one_turn: COLLISION, steps=4
+- 4/easy_corner_goal_blocked: COLLISION, steps=3
+- 5/easy_two_isolated_obstacles: COLLISION, steps=2
+- 7/medium_s_shaped_path: COLLISION, steps=4
+- 8/medium_central_obstacle: COLLISION, steps=2
+- 9/medium_single_valid_detour: COLLISION, steps=4
+- 10/medium_dead_end_corridors: COLLISION, steps=2
+- 11/hard_maze_one_dead_end: COLLISION, steps=5
+- 12/hard_u_trap_goal: COLLISION, steps=2
+- 13/hard_long_detour_budget: COLLISION, steps=8
+- 14/hard_two_dead_ends: COLLISION, steps=3
+- 15/hard_move_away_corridor: COLLISION, steps=1
+
+Improve the controller so it is more successful and more efficient. Prioritise preserving no timeouts and increasing success above 2/15. Output only Python code.

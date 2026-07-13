@@ -1,0 +1,6 @@
+approach,challenge_type,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score,drift_rate,regression_rate,improvement_rate,pure_trace_drift_rate
+opus_pdd_group_a1,corridor,3,6,0.0,0.0,1.0,0.0,17.5,11.0,0.0,0.0,0.0,0.0,0.0
+opus_pdd_group_a1,counterintuitive,3,9,0.0,0.0,1.0,0.0,24.0,11.0,0.0,0.0,0.0,0.0,0.0
+opus_pdd_group_a1,dead_end,3,9,0.0,0.0,1.0,0.0,24.0,10.667,0.0,0.0,0.0,0.0,0.0
+opus_pdd_group_a1,single_detour,3,18,0.0,0.0,1.0,0.0,24.333,8.5,0.0,0.0,0.0,0.0,0.0
+opus_pdd_group_a1,straight_line,3,3,0.0,0.0,1.0,0.0,20.0,4.0,0.0,0.0,0.0,0.0,0.0

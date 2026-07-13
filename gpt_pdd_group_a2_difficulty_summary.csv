@@ -1,0 +1,4 @@
+approach,difficulty,challenge_type,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score,drift_rate,regression_rate,improvement_rate,pure_trace_drift_rate
+gpt_pdd_group_a2,easy,all,2,10,0.0,0.0,0.0,1.0,0.0,7.0,0.0,0.0,0.0,0.0,0.0
+gpt_pdd_group_a2,hard,all,2,10,0.0,0.0,0.0,1.0,0.0,11.2,0.0,0.0,0.0,0.0,0.0
+gpt_pdd_group_a2,medium,all,2,10,0.0,0.0,0.0,1.0,0.0,10.2,0.0,0.0,0.0,0.0,0.0

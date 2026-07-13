@@ -1,0 +1,99 @@
+The previous controller is runnable and currently the strongest SDD chain, but it still shows unstable drift and still fails on:
+- 6 medium_straight_narrow_corridor
+- 7 medium_s_shaped_path
+- 8 medium_central_obstacle
+- 9 medium_single_valid_detour
+- 10 medium_dead_end_corridors
+- 12 hard_u_trap_goal
+- 14 hard_two_dead_ends
+- 15 hard_move_away_corridor
+
+It currently succeeds on:
+- 1 easy_open_short_path
+- 2 easy_single_obstacle_detour
+- 3 easy_l_wall_one_turn
+- 4 easy_corner_goal_blocked
+- 5 easy_two_isolated_obstacles
+- 11 hard_maze_one_dead_end
+- 13 hard_long_detour_budget
+
+Regenerate the controller and follow this specification exactly.
+
+1. File Contract
+The output must be a single Python file.
+The file must contain only controller code.
+The file must import exactly:
+
+from gridbot.sim.actions import Action, Heading
+
+The file must define exactly:
+
+class Controller:
+    def act(self, observation) -> Action:
+        ...
+
+2. Observation Contract
+Use only:
+- observation.position
+- observation.heading
+- observation.goal
+
+Do not access any other observation fields.
+
+3. Action Contract
+Return only:
+- Action.FORWARD
+- Action.TURN_LEFT
+- Action.TURN_RIGHT
+- Action.WAIT
+
+4. Heading Contract
+Use only:
+- Heading.N
+- Heading.E
+- Heading.S
+- Heading.W
+
+5. Coordinate Convention
+- Heading.E increases x
+- Heading.W decreases x
+- Heading.S increases y
+- Heading.N decreases y
+
+6. Progress-Inference Rule
+Infer blocked forward movement only when:
+- the previous action was Action.FORWARD, and
+- the current position is unchanged from the previous position
+
+7. Behaviour Requirements
+If already at the goal, return Action.WAIT.
+Otherwise, attempt to reach the goal deterministically.
+
+Preserve the existing strengths of this chain on easy scenarios and on:
+- 11 hard_maze_one_dead_end
+- 13 hard_long_detour_budget
+
+Improve specifically:
+- re-entering corridors cleanly after detours
+- handling narrow corridors without overcommitting to remembered blocked edges
+- committing to longer detours around central obstacles and dead ends
+- moving away from the goal temporarily when needed
+
+8. Planning Constraints
+You may use bounded deterministic memory.
+You may use bounded local planning or bounded search.
+If you use inferred blocked moves, keep them bounded and episode-local.
+Do not let remembered blocked edges cause over-pruning of valid corridor moves.
+Do not use unbounded global search.
+
+9. Recovery Constraints
+If using recovery mode:
+- use a clear entry condition
+- use a clear exit condition
+- commit for multiple steps before abandoning the recovery
+- allow switching side only after repeated failed progress
+- avoid short oscillations near obstacle corners
+
+10. Output Requirements
+Output only Python code.
+Do not include explanations.

@@ -1,0 +1,110 @@
+The previous controller regressed severely. It dropped from 7/15 successes to 1/15 and kept only:
+- 1 easy_open_short_path
+
+It lost previously solved scenarios:
+- 2 easy_single_obstacle_detour
+- 3 easy_l_wall_one_turn
+- 4 easy_corner_goal_blocked
+- 5 easy_two_isolated_obstacles
+- 6 medium_straight_narrow_corridor
+- 11 hard_maze_one_dead_end
+
+It still fails on:
+- 7 medium_s_shaped_path
+- 8 medium_central_obstacle
+- 9 medium_single_valid_detour
+- 10 medium_dead_end_corridors
+- 12 hard_u_trap_goal
+- 13 hard_long_detour_budget
+- 14 hard_two_dead_ends
+- 15 hard_move_away_corridor
+
+Regenerate the controller and follow this specification exactly.
+
+1. File Contract
+The output must be a single Python file.
+The file must contain only controller code.
+The file must import exactly:
+
+from gridbot.sim.actions import Action, Heading
+
+The file must define exactly:
+
+class Controller:
+    def act(self, observation) -> Action:
+        ...
+
+2. Observation Contract
+Use only:
+- observation.position
+- observation.heading
+- observation.goal
+
+Do not access any other observation fields.
+
+3. Action Contract
+Return only:
+- Action.FORWARD
+- Action.TURN_LEFT
+- Action.TURN_RIGHT
+- Action.WAIT
+
+4. Heading Contract
+Use only:
+- Heading.N
+- Heading.E
+- Heading.S
+- Heading.W
+
+5. Coordinate Convention
+- Heading.E increases x
+- Heading.W decreases x
+- Heading.S increases y
+- Heading.N decreases y
+
+6. Progress-Inference Rule
+Infer blocked forward movement only when:
+- the previous action was Action.FORWARD, and
+- the current position is unchanged from the previous position
+
+7. Behaviour Requirements
+If already at the goal, return Action.WAIT.
+Otherwise, attempt to reach the goal deterministically.
+
+Keep the overall idea of:
+- goal mode
+- follow mode
+- deterministic hand/side choice
+
+But simplify it enough to restore the previously solved easy and corridor scenarios.
+The previous version became too phase-heavy and unstable.
+
+Preserve or recover:
+- 2 easy_single_obstacle_detour
+- 3 easy_l_wall_one_turn
+- 4 easy_corner_goal_blocked
+- 5 easy_two_isolated_obstacles
+- 6 medium_straight_narrow_corridor
+- 11 hard_maze_one_dead_end
+
+Improve:
+- commitment to longer detours
+- moving away from goal when necessary
+- avoiding repeated local oscillation
+- escaping dead ends without complex phase explosions
+
+8. Recovery Constraints
+If using follow mode:
+- use a small number of clear phases or states
+- use bounded counters only
+- avoid complex multi-phase state machines unless each phase has a clear purpose
+- include a deterministic rule for when to return to goal mode
+- do not repeatedly alternate turns without attempted progress
+
+9. Simplicity Constraint
+Prefer a smaller, more stable controller over a highly elaborate recovery machine.
+Only add state that is necessary to improve repeated failed forward progress.
+
+10. Output Requirements
+Output only Python code.
+Do not include explanations.

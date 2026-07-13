@@ -1,0 +1,4 @@
+approach,difficulty,challenge_type,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score,drift_rate,regression_rate,improvement_rate,pure_trace_drift_rate
+gpt_sdd_a,easy,all,4,20,0.6,0.0,0.15,0.25,10.6,7.0,0.437,0.867,0.333,0.533,0.0
+gpt_sdd_a,hard,all,4,20,0.2,0.0,0.55,0.25,17.1,11.2,0.147,1.0,0.2,0.4,0.4
+gpt_sdd_a,medium,all,4,20,0.05,0.0,0.7,0.25,13.55,10.2,0.05,1.0,0.067,0.333,0.6

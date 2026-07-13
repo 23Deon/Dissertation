@@ -1,0 +1,33 @@
+Write Python code for a grid robot controller. The robot is trying to reach a goal position. It knows its current position, heading, and the goal position. It can choose to move forward, turn left, turn right, or wait.
+Use these imports: from gridbot.sim.actions import Action, Heading
+Define a class Controller with a method act(self, observation) -> Action.
+The observation has: observation.position, observation.heading, observation.goal.
+Use the existing enum names exactly: Heading.N, Heading.E, Heading.S, Heading.W and Action.FORWARD, Action.TURN_LEFT, Action.TURN_RIGHT, Action.WAIT.
+
+Previous controller results for this chain:
+- Successes: 3/15
+- Collisions: 12/15
+- Timeouts: 0/15
+- Invalid runs: 0/15
+- Average steps: 4.333
+
+Successful scenarios:
+- 1/easy_open_short_path: event=GOAL_REACHED, steps=4
+- 4/easy_corner_goal_blocked: event=GOAL_REACHED, steps=16
+- 6/medium_straight_narrow_corridor: event=GOAL_REACHED, steps=7
+
+Failing scenarios:
+- 2/easy_single_obstacle_detour: event=COLLISION, steps=2
+- 3/easy_l_wall_one_turn: event=COLLISION, steps=3
+- 5/easy_two_isolated_obstacles: event=COLLISION, steps=2
+- 7/medium_s_shaped_path: event=COLLISION, steps=3
+- 8/medium_central_obstacle: event=COLLISION, steps=2
+- 9/medium_single_valid_detour: event=COLLISION, steps=4
+- 10/medium_dead_end_corridors: event=COLLISION, steps=2
+- 11/hard_maze_one_dead_end: event=COLLISION, steps=4
+- 12/hard_u_trap_goal: event=COLLISION, steps=4
+- 13/hard_long_detour_budget: event=COLLISION, steps=8
+- 14/hard_two_dead_ends: event=COLLISION, steps=3
+- 15/hard_move_away_corridor: event=COLLISION, steps=1
+
+Improve the controller so it is more successful and more efficient. Prioritise reaching the goal on more scenarios. If a scenario already succeeds, try not to make it worse. Output only Python code.

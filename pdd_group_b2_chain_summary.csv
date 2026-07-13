@@ -1,0 +1,3 @@
+approach,development_method,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+gpt_pdd_group_b2,PDD,8,120,0.1,0.0,0.775,0.125,18.942,9.467,0.098
+opus_pdd_group_b2,PDD,8,120,0.133,0.0,0.867,0.0,21.25,9.467,0.1

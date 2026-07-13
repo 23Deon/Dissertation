@@ -1,0 +1,18 @@
+Write Python code for a grid robot controller. The robot is trying to reach a goal position. It knows its current position, heading, and the goal position. It can choose to move forward, turn left, turn right, or wait.
+Use these imports: from gridbot.sim.actions import Action, Heading
+Define a class Controller with a method act(self, observation) -> Action.
+The observation has: observation.position, observation.heading, observation.goal.
+Use the existing enum names exactly: Heading.N, Heading.E, Heading.S, Heading.W and Action.FORWARD, Action.TURN_LEFT, Action.TURN_RIGHT, Action.WAIT.
+
+Previous controller results for this chain:
+- Successes: X/15
+- Collisions: X/15
+- Timeouts: X/15
+- Invalid runs: X/15
+- Average steps: X
+
+Failing scenarios:
+- Scenario ID/name: event=..., steps=...
+- Scenario ID/name: event=..., steps=...
+
+Improve the controller so it is more successful and more efficient. Prioritise reaching the goal on more scenarios. If a scenario already succeeds, try not to make it worse. Output only Python code.

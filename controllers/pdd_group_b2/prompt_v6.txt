@@ -1,0 +1,43 @@
+Write Python code for a grid robot controller. The robot is trying to reach a goal position. It knows its current position, heading, and the goal position. It can choose to move forward, turn left, turn right, or wait.
+Use these imports: from gridbot.sim.actions import Action, Heading
+Define a class Controller with a method act(self, observation) -> Action.
+The observation has: observation.position, observation.heading, observation.goal.
+Use the existing enum names exactly: Heading.N, Heading.E, Heading.S, Heading.W and Action.FORWARD, Action.TURN_LEFT, Action.TURN_RIGHT, Action.WAIT.
+
+Previous controller results for this chain:
+- Version: v5
+- Successes: 2/15
+- Collisions: 13/15
+- Timeouts: 0/15
+- Invalid runs: 0/15
+- Average steps: 4.133
+- Version-to-version result from v3 to v4: 5/15 scenarios changed, 1 regression, 0 improvements.
+- Version-to-version result from v4 to v5: 5/15 scenarios changed, 1 improvement, but success count stayed 2/15 and average steps worsened overall.
+
+Successful scenarios to preserve:
+- 1/easy_open_short_path: GOAL_REACHED in 4 steps
+- 6/medium_straight_narrow_corridor: GOAL_REACHED in 7 steps
+
+Main issue to address:
+- Later changes increased step counts without improving success count.
+- The controller still collides on almost every scenario with obstacles.
+- Do not depend on observation.front_blocked, observation.blocked, or any obstacle-sensing field, because the observation contract only guarantees position, heading, and goal.
+- Avoid adding memory or detour logic that only increases steps while still colliding.
+- Try a simple deterministic policy change aimed at reducing early collisions, such as switching axis priority when a direct route is likely poor, rather than only chasing the largest distance or always moving greedily.
+
+Failing scenarios:
+- 2/easy_single_obstacle_detour: COLLISION, steps=2
+- 3/easy_l_wall_one_turn: COLLISION, steps=7
+- 4/easy_corner_goal_blocked: COLLISION, steps=4
+- 5/easy_two_isolated_obstacles: COLLISION, steps=2
+- 7/medium_s_shaped_path: COLLISION, steps=5
+- 8/medium_central_obstacle: COLLISION, steps=2
+- 9/medium_single_valid_detour: COLLISION, steps=4
+- 10/medium_dead_end_corridors: COLLISION, steps=2
+- 11/hard_maze_one_dead_end: COLLISION, steps=9
+- 12/hard_u_trap_goal: COLLISION, steps=2
+- 13/hard_long_detour_budget: COLLISION, steps=8
+- 14/hard_two_dead_ends: COLLISION, steps=3
+- 15/hard_move_away_corridor: COLLISION, steps=1
+
+Improve the controller so it is more successful and more efficient. Prioritise reaching the goal on more scenarios. Preserve the two successful scenarios and avoid increasing average steps without improving success. Output only Python code.

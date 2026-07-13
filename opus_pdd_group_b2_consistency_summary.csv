@@ -1,0 +1,16 @@
+approach,scenario_id,scenario_name,dominant_outcome,consistency_score,consistency_interpretation
+opus_pdd_group_b2,1,easy_open_short_path,GOAL_REACHED,0.75,mixed_or_variable
+opus_pdd_group_b2,2,easy_single_obstacle_detour,GOAL_REACHED,0.625,mixed_or_variable
+opus_pdd_group_b2,3,easy_l_wall_one_turn,TIMEOUT,0.75,mixed_or_variable
+opus_pdd_group_b2,4,easy_corner_goal_blocked,TIMEOUT,0.875,high_consistency_stagnation
+opus_pdd_group_b2,5,easy_two_isolated_obstacles,TIMEOUT,0.875,high_consistency_stagnation
+opus_pdd_group_b2,6,medium_straight_narrow_corridor,TIMEOUT,0.875,high_consistency_stagnation
+opus_pdd_group_b2,7,medium_s_shaped_path,TIMEOUT,1.0,high_consistency_stagnation
+opus_pdd_group_b2,8,medium_central_obstacle,TIMEOUT,1.0,high_consistency_stagnation
+opus_pdd_group_b2,9,medium_single_valid_detour,TIMEOUT,1.0,high_consistency_stagnation
+opus_pdd_group_b2,10,medium_dead_end_corridors,TIMEOUT,1.0,high_consistency_stagnation
+opus_pdd_group_b2,11,hard_maze_one_dead_end,TIMEOUT,1.0,high_consistency_stagnation
+opus_pdd_group_b2,12,hard_u_trap_goal,TIMEOUT,1.0,high_consistency_stagnation
+opus_pdd_group_b2,13,hard_long_detour_budget,TIMEOUT,1.0,high_consistency_stagnation
+opus_pdd_group_b2,14,hard_two_dead_ends,TIMEOUT,1.0,high_consistency_stagnation
+opus_pdd_group_b2,15,hard_move_away_corridor,TIMEOUT,1.0,high_consistency_stagnation

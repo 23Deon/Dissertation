@@ -1,0 +1,9 @@
+chain,development_method,version,validity_status,controller_path,scenarios,success_count,success_rate,collision_count,collision_rate,timeout_count,timeout_rate,invalid_count,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+gpt_sdd_b,SDD,1,all_invalid,controllers/sdd_b/controller_v1.py,15,0,0.0,0,0.0,0,0.0,15,1.0,0.0,9.467,0.0
+gpt_sdd_b,SDD,2,valid,controllers/sdd_b/controller_v2.py,15,7,0.467,0,0.0,8,0.533,0,0.0,18.667,9.467,0.281
+gpt_sdd_b,SDD,3,valid,controllers/sdd_b/controller_v3.py,15,2,0.133,0,0.0,13,0.867,0,0.0,21.8,9.467,0.085
+gpt_sdd_b,SDD,4,valid,controllers/sdd_b/controller_v4.py,15,5,0.333,0,0.0,10,0.667,0,0.0,20.333,9.467,0.207
+opus_sdd_b,SDD,1,valid,controllers/opus_sdd_b/controller_v1.py,15,7,0.467,0,0.0,8,0.533,0,0.0,17.333,9.467,0.323
+opus_sdd_b,SDD,2,valid,controllers/opus_sdd_b/controller_v2.py,15,1,0.067,0,0.0,14,0.933,0,0.0,21.933,9.467,0.067
+opus_sdd_b,SDD,3,valid,controllers/opus_sdd_b/controller_v3.py,15,5,0.333,0,0.0,10,0.667,0,0.0,20.533,9.467,0.199
+opus_sdd_b,SDD,4,valid,controllers/opus_sdd_b/controller_v4.py,15,5,0.333,0,0.0,10,0.667,0,0.0,20.533,9.467,0.199

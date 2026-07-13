@@ -1,0 +1,9 @@
+approach,version,challenge_type,scenarios,success_count,success_rate,collision_count,collision_rate,timeout_count,timeout_rate,invalid_count,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+gpt_pdd_group_b1,1,all,15,0,0.0,0,0.0,0,0.0,15,1.0,0.0,9.467,0.0
+gpt_pdd_group_b1,2,all,15,3,0.2,0,0.0,12,0.8,0,0.0,20.733,9.467,0.167
+gpt_pdd_group_b1,3,all,15,3,0.2,0,0.0,12,0.8,0,0.0,20.733,9.467,0.167
+gpt_pdd_group_b1,4,all,15,3,0.2,0,0.0,12,0.8,0,0.0,20.733,9.467,0.167
+gpt_pdd_group_b1,5,all,15,3,0.2,0,0.0,12,0.8,0,0.0,20.733,9.467,0.167
+gpt_pdd_group_b1,6,all,15,4,0.267,0,0.0,11,0.733,0,0.0,19.467,9.467,0.255
+gpt_pdd_group_b1,7,all,15,3,0.2,0,0.0,12,0.8,0,0.0,20.2,9.467,0.193
+gpt_pdd_group_b1,8,all,15,4,0.267,0,0.0,11,0.733,0,0.0,19.467,9.467,0.255

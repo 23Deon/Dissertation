@@ -1,0 +1,14 @@
+approach,version,challenge_type,scenarios,success_count,success_rate,collision_count,collision_rate,timeout_count,timeout_rate,invalid_count,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+opus_sdd,1,all,15,0,0.0,0,0.0,15,1.0,0,0.0,23.0,9.467,0.0
+opus_sdd_a,1,all,15,9,0.6,0,0.0,6,0.4,0,0.0,17.4,9.467,0.397
+opus_sdd_a,2,all,15,1,0.067,0,0.0,14,0.933,0,0.0,21.933,9.467,0.067
+opus_sdd_a,3,all,15,8,0.533,0,0.0,7,0.467,0,0.0,17.467,9.467,0.371
+opus_sdd_a,4,all,15,6,0.4,0,0.0,9,0.6,0,0.0,18.267,9.467,0.269
+opus_sdd_b,1,all,15,7,0.467,0,0.0,8,0.533,0,0.0,17.333,9.467,0.323
+opus_sdd_b,2,all,15,1,0.067,0,0.0,14,0.933,0,0.0,21.933,9.467,0.067
+opus_sdd_b,3,all,15,5,0.333,0,0.0,10,0.667,0,0.0,20.533,9.467,0.199
+opus_sdd_b,4,all,15,5,0.333,0,0.0,10,0.667,0,0.0,20.533,9.467,0.199
+opus_sdd_c,1,all,15,8,0.533,0,0.0,7,0.467,0,0.0,16.867,9.467,0.369
+opus_sdd_c,2,all,15,8,0.533,0,0.0,7,0.467,0,0.0,16.867,9.467,0.369
+opus_sdd_c,3,all,15,6,0.4,0,0.0,9,0.6,0,0.0,17.867,9.467,0.287
+opus_sdd_c,4,all,15,6,0.4,0,0.0,9,0.6,0,0.0,18.2,9.467,0.274

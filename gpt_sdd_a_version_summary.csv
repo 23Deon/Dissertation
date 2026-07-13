@@ -1,0 +1,5 @@
+approach,version,challenge_type,scenarios,success_count,success_rate,collision_count,collision_rate,timeout_count,timeout_rate,invalid_count,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+gpt_sdd_a,1,all,15,0,0.0,0,0.0,0,0.0,15,1.0,0.0,9.467,0.0
+gpt_sdd_a,2,all,15,5,0.333,0,0.0,10,0.667,0,0.0,18.533,9.467,0.299
+gpt_sdd_a,3,all,15,7,0.467,0,0.0,8,0.533,0,0.0,17.467,9.467,0.313
+gpt_sdd_a,4,all,15,5,0.333,0,0.0,10,0.667,0,0.0,19.0,9.467,0.234

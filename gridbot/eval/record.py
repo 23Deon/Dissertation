@@ -15,6 +15,10 @@ class TraceRecord:
     actions: List[Action]
     headings: List[Heading]
 
+    @property
+    def trace_len(self) -> int:
+        return len(self.actions)
+
 
 @dataclass(frozen=True)
 class ScenarioRunRecord:

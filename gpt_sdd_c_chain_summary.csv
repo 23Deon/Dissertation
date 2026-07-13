@@ -1,0 +1,2 @@
+approach,development_method,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+gpt_sdd_c,SDD,4,60,0.2,0.0,0.55,0.25,15.15,9.467,0.138

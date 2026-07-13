@@ -1,0 +1,4 @@
+approach,difficulty,challenge_type,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score,drift_rate,regression_rate,improvement_rate,pure_trace_drift_rate
+opus_sdd_c,easy,all,4,20,1.0,0.0,0.0,0.0,12.05,7.0,0.65,0.133,0.133,0.0,0.0
+opus_sdd_c,hard,all,4,20,0.1,0.0,0.9,0.0,24.0,11.2,0.055,0.8,0.067,0.0,0.733
+opus_sdd_c,medium,all,4,20,0.3,0.0,0.7,0.0,16.3,10.2,0.269,0.533,0.067,0.0,0.467

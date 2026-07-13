@@ -1,0 +1,45 @@
+Write Python code for a grid robot controller. The robot is trying to reach a goal position. It knows its current position, heading, and the goal position. It can choose to move forward, turn left, turn right, or wait.
+Use these imports: from gridbot.sim.actions import Action, Heading
+Define a class Controller with a method act(self, observation) -> Action.
+The observation has: observation.position, observation.heading, observation.goal.
+Use the existing enum names exactly: Heading.N, Heading.E, Heading.S, Heading.W and Action.FORWARD, Action.TURN_LEFT, Action.TURN_RIGHT, Action.WAIT.
+
+Previous controller results for this chain:
+- Version: v7
+- Successes: 3/15
+- Collisions: 12/15
+- Timeouts: 0/15
+- Invalid runs: 0/15
+- Average steps: 4.467
+- Version-to-version result from v6 to v7: 4/15 scenarios changed, 0 improvements, 1 regression.
+
+Successful scenarios to preserve:
+- 1/easy_open_short_path: GOAL_REACHED in 4 steps
+- 4/easy_corner_goal_blocked: GOAL_REACHED in 15 steps
+- 6/medium_straight_narrow_corridor: GOAL_REACHED in 7 steps
+
+Regressions and targets:
+- 4/easy_corner_goal_blocked still succeeds but worsened from 13 to 15 steps.
+- 3/easy_l_wall_one_turn and 11/hard_maze_one_dead_end were successful in v5 but are still collisions in v7.
+
+Main issue to address:
+- v7 preserved the corner-goal success but did not recover the earlier wins on scenarios 3 and 11.
+- Avoid unstable axis switching every few steps, but consider a deterministic axis choice that preserves both simple L-shaped turns and corner detours.
+- Do not depend on obstacle-sensing fields such as front_blocked; only position, heading, and goal are guaranteed.
+- Keep the controller simple and deterministic.
+
+Failing scenarios:
+- 2/easy_single_obstacle_detour: COLLISION, steps=2
+- 3/easy_l_wall_one_turn: COLLISION, steps=4
+- 5/easy_two_isolated_obstacles: COLLISION, steps=2
+- 7/medium_s_shaped_path: COLLISION, steps=4
+- 8/medium_central_obstacle: COLLISION, steps=2
+- 9/medium_single_valid_detour: COLLISION, steps=4
+- 10/medium_dead_end_corridors: COLLISION, steps=2
+- 11/hard_maze_one_dead_end: COLLISION, steps=5
+- 12/hard_u_trap_goal: COLLISION, steps=4
+- 13/hard_long_detour_budget: COLLISION, steps=8
+- 14/hard_two_dead_ends: COLLISION, steps=3
+- 15/hard_move_away_corridor: COLLISION, steps=1
+
+Improve the controller so it is more successful and more efficient. Prioritise preserving scenarios 1, 4, and 6 while recovering scenario 3 or 11 if possible. Output only Python code.

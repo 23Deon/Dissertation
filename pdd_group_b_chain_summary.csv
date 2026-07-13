@@ -1,0 +1,4 @@
+approach,development_method,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+pdd_group_b1,PDD,8,120,0.192,0.0,0.683,0.125,17.758,9.467,0.171
+pdd_group_b2,PDD,8,120,0.1,0.0,0.775,0.125,18.942,9.467,0.098
+pdd_group_b3,PDD,8,120,0.242,0.0,0.633,0.125,17.133,9.467,0.215

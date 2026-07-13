@@ -1,0 +1,6 @@
+approach,challenge_type,versions_seen,runs,success_rate,collision_rate,timeout_rate,invalid_rate,average_steps,average_optimal_steps,efficiency_score,drift_rate,regression_rate,improvement_rate,pure_trace_drift_rate
+opus_sdd_c,corridor,4,8,0.5,0.0,0.5,0.0,13.5,11.0,0.5,0.333,0.0,0.0,0.333
+opus_sdd_c,counterintuitive,4,12,0.0,0.0,1.0,0.0,24.0,11.0,0.0,0.889,0.0,0.0,0.889
+opus_sdd_c,dead_end,4,12,0.333,0.0,0.667,0.0,21.5,10.667,0.207,0.667,0.222,0.0,0.444
+opus_sdd_c,single_detour,4,24,0.667,0.0,0.333,0.0,15.708,8.5,0.375,0.333,0.111,0.0,0.222
+opus_sdd_c,straight_line,4,4,1.0,0.0,0.0,0.0,4.0,4.0,1.0,0.0,0.0,0.0,0.0

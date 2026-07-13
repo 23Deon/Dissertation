@@ -1,0 +1,5 @@
+approach,version,challenge_type,scenarios,success_count,success_rate,collision_count,collision_rate,timeout_count,timeout_rate,invalid_count,invalid_rate,average_steps,average_optimal_steps,efficiency_score
+opus_sdd_c,1,all,15,8,0.533,0,0.0,7,0.467,0,0.0,16.867,9.467,0.369
+opus_sdd_c,2,all,15,8,0.533,0,0.0,7,0.467,0,0.0,16.867,9.467,0.369
+opus_sdd_c,3,all,15,6,0.4,0,0.0,9,0.6,0,0.0,17.867,9.467,0.287
+opus_sdd_c,4,all,15,6,0.4,0,0.0,9,0.6,0,0.0,18.2,9.467,0.274
